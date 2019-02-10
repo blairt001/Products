@@ -33,15 +33,32 @@ class ProductController extends Controller
     return redirect('products/create')->with('success','Product details submitted successfully');
     }
    
-   public function edit(){
+   /**
+     * Edit the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+   public function edit($id){
    	  $products = Products::find($id);
       return view('products.edit',compact('products','id'));
  
    }
 
-   public function delete(){
 
+   /**
+     * Delete the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
 
+   public function delete($id){
+
+        
    }
 
   /**
@@ -67,9 +84,10 @@ class ProductController extends Controller
         $product->quantity = $request->get('quantity');
         $product->category = $request->get('category');
         $product->save();
-        return redirect('products.edit')->with('success','Product has been updated');
+        return redirect('allproducts.allproduct')->with('success','Product has been updated');
     }
 
+   
    public function products(){
    	// fetch all contacts from the database
    	 // $products = Products::paginate(3); arrows instead of numbers
