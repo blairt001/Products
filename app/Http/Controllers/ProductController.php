@@ -72,6 +72,7 @@ class ProductController extends Controller
 
    public function products(){
    	// fetch all contacts from the database
+   	 // $products = Products::paginate(3); arrows instead of numbers
      $products = Products::paginate(3);
      return view('allproducts.allproduct')->with('products',$products);
    }

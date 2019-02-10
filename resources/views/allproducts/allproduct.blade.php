@@ -10,6 +10,9 @@
     <div class="container">
     <br />
     <div class="d-flex justify-content-center align-items-center container "><h2>All Products</h2></div>
+    <h3>{{$products->total()}} total products available in the database</h3>
+
+    <b>In this page ({{$products->count()}}) products shown</b>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
