@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/products', 'ProductController@create');
 Route::get('/allproducts', 'ProductController@products');
+Route::get('/products', 'ProductController@edit');
+Route::get('/products', 'ProductController@delete');

@@ -34,7 +34,7 @@ class ProductController extends Controller
    
    public function edit(){
    	  $products = Products::find($id);
-      return view('products.edit',compact('product','id'));
+      return view('products.edit',compact('products','id'));
  
    }
 
@@ -66,7 +66,7 @@ class ProductController extends Controller
         $product->quantity = $request->get('quantity');
         $product->category = $request->get('category');
         $product->save();
-        return redirect('products')->with('success','Product has been updated');
+        return redirect('products.edit')->with('success','Product has been updated');
     }
 
    public function products(){
