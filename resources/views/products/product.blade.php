@@ -9,10 +9,24 @@
     <br />
     <br />
     <div class="container">
-    <div class="d-flex justify-content-center align-items-center container "><h2>Enter Product Details</h2></div
-      <form method="post" action="{{url('products')}}>
+    <div class="d-flex justify-content-center align-items-center container "><h2>Enter Product Details</h2></div>
+    @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+              @endforeach
+          </ul>
+      </div><br />
+      @endif
+      @if (\Session::has('success'))
+      <div class="alert alert-success">
+          <p>{{ \Session::get('success') }}</p>
+      </div><br />
+      @endif
+      <form method="post" action="{{url('allproducts/store')}}">
+        {{csrf_field()}}
         <div class="row">
-          {{csrf_field()}}
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="name">Name:</label>
