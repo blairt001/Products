@@ -11,6 +11,7 @@ class ProductController extends Controller
     public function create(){
     	return view('products.product');
     }
+
     public function store(Request $request){
     	$this->validate($request,[
     		'name' => 'required',
@@ -29,7 +30,7 @@ class ProductController extends Controller
     // save to db
     $product->save();
     //redirect after save
-    return redirect('products')->with('success','Product details submitted successfully');
+    return redirect('products/create')->with('success','Product details submitted successfully');
     }
    
    public function edit(){
@@ -71,7 +72,7 @@ class ProductController extends Controller
 
    public function products(){
    	// fetch all contacts from the database
-     $products = Products::all();
+     $products = Products::paginate(3);
      return view('allproducts.allproduct')->with('products',$products);
    }
 }
