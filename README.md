@@ -4,7 +4,7 @@
 
 
 # Products
-A simple laravel application to display products
+This is a simple laravel application to display products
 
 # Project Licence
 [MIT LICENSE](https://github.com/blairt001/Products/blob/develop/LICENSE)
