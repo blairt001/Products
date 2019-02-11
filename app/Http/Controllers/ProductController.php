@@ -21,7 +21,7 @@ class ProductController extends Controller
     		'name' => 'required',
     		'description' => 'required',
     		'price' => 'required|numeric',
-    		'quantity' => 'required',
+    		'quantity' => 'required|numeric',
     		'category' => 'required',
     	]);
     // create a contact
@@ -73,15 +73,15 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function update(Request $request, $id)
+    public function update(Request $request , $id)
     {
         $product = Products::find($id);
-        $this->validate(request(), [
+        $this->validate($request, [
           'name' => 'required',
-          'description' => 'description',
+          'description' => 'required',
           'price' => 'required|numeric',
-          'quantity' => 'quantity',
-          'category' => 'category'
+          'quantity' => 'required|numeric',
+          'category' => 'required'
         ]);
         $product->name = $request->get('name');
         $product->description = $request->get('description');
@@ -89,7 +89,7 @@ class ProductController extends Controller
         $product->quantity = $request->get('quantity');
         $product->category = $request->get('category');
         $product->save();
-        return redirect('allproducts.allproduct')->with('success','Product has been updated');
+        return redirect('allproducts')->with('success','Product has been updated');
     }
 
    
