@@ -1,25 +1,13 @@
 
-[![Build Status](https://travis-ci.org/blairt001/Products.svg?branch=develop)](https://travis-ci.org/blairt001/Products)
-[![Maintainability](https://api.codeclimate.com/v1/badges/6f9c7e6798300c35d437/maintainability)](https://codeclimate.com/github/blairt001/Products/maintainability)
-
-
 ## Products
-This is a simple laravel application to display store and retrieve products
-It also allows you to edit and delete a specific product
+ Rewritting the [Products](https://github.com/blairt001/Products.git) application using [Axios](https://github.com/axios/axios) to make promises and to transform the request and response data.
 
-## Sample Screenshot
-
-![Products](https://github.com/blairt001/Products/blob/develop/products.png)
-
-## Tinker a Bit
-
-![Products](https://github.com/blairt001/Products/blob/develop/products1.png)
 
 ## Project Licence
-[MIT LICENSE](https://github.com/blairt001/Products/blob/develop/LICENSE)
+[MIT LICENSE]()
 
 ## Setting up the project
-1. Clone the repo `https://github.com/blairt001/Products.git`
+1. Clone the repo `https://github.com/blairt001/ProductsV2.git`
 2. Create `.env` file and paste the contents from `.env.example`
 3. Modify the `.env` file to contain your database configurations
 4. On the terminal , run `php artisan migrate`
