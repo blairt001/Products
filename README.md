@@ -6,7 +6,7 @@
 # Products
 This is a simple laravel application to display products details
 
-
+(product.png)
 # Project Licence
 [MIT LICENSE](https://github.com/blairt001/Products/blob/develop/LICENSE)
 
