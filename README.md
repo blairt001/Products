@@ -7,7 +7,7 @@
 This is a simple laravel application to display store and retrieve products
 It also allows you to edit and delete a specific product
 
-## Sample Screemshot
+## Sample Screenshot
 
 ![Products](https://github.com/blairt001/Products/blob/develop/products.png)
 
