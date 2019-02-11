@@ -9,10 +9,10 @@
       <li class="{{Request::is('/') ? 'active' : ''}}" class="nav-item">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="{{Request::is('products.about') ? 'active' : ''}}" class="nav-item">
+      <li class="{{Request::is('products/about') ? 'active' : ''}}" class="nav-item">
         <a class="nav-link" href="/products/about">About</a>
       </li>
-      <li class="{{Request::is('products.create') ? 'active' : ''}}" class="nav-item">
+      <li class="{{Request::is('products/create') ? 'active' : ''}}" class="nav-item">
         <a class="nav-link" href="/products/create">Add Product</a>
       </li>
       <li class="{{Request::is('allproducts') ? 'active' : ''}}" class="nav-item">
