@@ -20,3 +20,4 @@ Route::get('/allproducts', 'ProductController@products');
 Route::get('/products/edit', 'ProductController@edit');
 Route::get('/products/delete', 'ProductController@delete');
 Route::post('/products/store', 'ProductController@store');
+Route::get('/products/about', 'ProductController@about');

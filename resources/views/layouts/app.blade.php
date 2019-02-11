@@ -8,6 +8,7 @@
 <body>
     @include('inc.navbar')
 <div class="container">
+	<br />
     @if(Request::is('/'))
 	 @include('inc.show')
 	@endif

@@ -12,6 +12,10 @@ class ProductController extends Controller
     	return view('products.product');
     }
 
+    public function about(){
+      return view('products.about');
+    }
+
     public function store(Request $request){
     	$this->validate($request,[
     		'name' => 'required',
