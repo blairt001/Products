@@ -13,7 +13,7 @@ It also allows you to edit and delete a specific product
 
 ## Tinker a Bit
 
-![Products](https://github.com/blairt001/Products/blob/develop/products.png)
+![Products](https://github.com/blairt001/Products/blob/develop/products1.png)
 
 ## Project Licence
 [MIT LICENSE](https://github.com/blairt001/Products/blob/develop/LICENSE)
