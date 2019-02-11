@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +13,9 @@
     <div class="container">
     <br />
     <div class="d-flex justify-content-center align-items-center container "><h2>All Products</h2></div>
+    <h3>{{$products->total()}} total products available in the database</h3>
+
+    <b>In this page ({{$products->count()}}) products shown</b>
     @if (\Session::has('success'))
       <div class="alert alert-success">
         <p>{{ \Session::get('success') }}</p>
@@ -37,18 +43,15 @@
         <td>{{$product['quantity']}}</td>
         <td>{{$product['category']}}</td>
 
-        <td><a href="" class="btn btn-warning">Edit</a></td>
-        <td>
-          <form action="" method="post">
-            {{csrf_field()}}
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
-          </form>
-        </td>
+        <td><a href="{{url('products/edit', $product['id'])}}" class="btn btn-warning">Edit</a></td>
+        <td><a href="{{url('products/delete', $product['id'])}}" class="btn btn-danger">Delete</a></td>
+
       </tr>
       @endforeach
     </tbody>
   </table>
+  {{$products->links()}}
   </div>
   </body>
 </html>
+@endsection

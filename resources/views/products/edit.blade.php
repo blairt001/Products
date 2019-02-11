@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,7 +27,7 @@
           <p>{{ \Session::get('success') }}</p>
       </div><br />
       @endif
-      <form method="post" action="{{url('products', '$id')}}">
+      <form method="post" action="{{url('products/edit', '$id')}}">
         {{csrf_field()}}
          <input name="_method" type="hidden" value="PATCH">
         <div class="row">
@@ -76,3 +79,4 @@
     </div>
   </body>
 </html>
+@endsection
