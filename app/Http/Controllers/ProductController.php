@@ -36,41 +36,42 @@ class ProductController extends Controller
     //redirect after save
     return redirect('products/create')->with('success','Product details submitted successfully');
     }
-   
-   /**
+
+    /**
      * Edit the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
 
    public function edit($id){
-   	  $products = Products::find($id);
-      return view('products.edit',compact('products','id'));
+   	  $product = Products::find($id);
+      return view('products.edit',compact('product','id'));
  
    }
 
 
-   /**
+    /**
      * Delete the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @return void
      */
 
    public function delete($id){
-
+    $products = Products::find($id);
+    $products->delete();
+    return redirect('allproducts')->with('success', 'Product has been deleted successfully');
         
    }
 
-  /**
+    /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function update(Request $request, $id)
     {

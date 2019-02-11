@@ -44,13 +44,8 @@
         <td>{{$product['category']}}</td>
 
         <td><a href="{{url('products/edit', $product['id'])}}" class="btn btn-warning">Edit</a></td>
-        <td>
-          <form action="" method="post" action="{{url('products/delete', $product['id'])}}">
-            {{csrf_field()}}
-            <input name="_method" type="hidden" value="DELETE">
-            <button class="btn btn-danger" type="submit">Delete</button>
-          </form>
-        </td>
+        <td><a href="{{url('products/delete', $product['id'])}}" class="btn btn-danger">Delete</a></td>
+
       </tr>
       @endforeach
     </tbody>
