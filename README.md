@@ -6,6 +6,7 @@
 # Products
 This is a simple laravel application to display products details
 
+
 # Project Licence
 [MIT LICENSE](https://github.com/blairt001/Products/blob/develop/LICENSE)
 
@@ -46,5 +47,8 @@ If you're not in the mood to read, [Laracasts](https://laracasts.com) contains o
 ## Laravel License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+## Author
+[Tony Okoth](www.linkedin.com/in/tony-okoth-69140b171)
 
 ## Thank you.
