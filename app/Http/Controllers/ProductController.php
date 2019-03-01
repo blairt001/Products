@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Products;
+use Faker\Generator;
 
 class ProductController extends Controller
 {
@@ -34,6 +36,7 @@ class ProductController extends Controller
     // save to db
     $product->save();
     //redirect after save
+        return response(($product->jsonSerialize().Response::HTTP_ACCEPTED));
     return redirect('products/create')->with('success','Product details submitted successfully');
     }
 
@@ -46,8 +49,10 @@ class ProductController extends Controller
 
    public function edit($id){
    	  $product = Products::find($id);
+
+   	  return response(null, Response::HTTP_OK);
       return view('products.edit',compact('product','id'));
- 
+
    }
 
 
@@ -61,8 +66,9 @@ class ProductController extends Controller
    public function delete($id){
     $products = Products::find($id);
     $products->delete();
+    return response(null, Response::HTTP_OK);
     return redirect('allproducts')->with('success', 'Product has been deleted successfully');
-        
+
    }
 
     /**
@@ -89,14 +95,16 @@ class ProductController extends Controller
         $product->quantity = $request->get('quantity');
         $product->category = $request->get('category');
         $product->save();
+        return response(null, Response::HTTP_OK);
         return redirect('allproducts')->with('success','Product has been updated');
     }
 
-   
+
    public function products(){
    	// fetch all contacts from the database
    	 // $products = Products::paginate(3); arrows instead of numbers
      $products = Products::paginate(3);
+     return response($products->jsonSerialize(), Response::HTTP_OK);
      return view('allproducts.allproduct')->with('products',$products);
    }
 }
